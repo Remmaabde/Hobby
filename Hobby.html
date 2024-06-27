@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photography</title>
+    <style>
+        body {
+            background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+        }
+
+        .change-theme {
+            background-color: #916AF2;
+            color: #fff;
+            border-radius: 20px;
+            padding: 10px 20px;
+            display: block;
+            margin: 0 auto;
+            border: none;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .change-theme:hover {
+            background: #9b77f5;
+        }
+
+
+        .dark {
+            background: linear-gradient(109.6deg, rgb(36, 45, 57) 11.2%, rgb(16, 37, 60) 51.2%, rgb(0, 0, 0) 98.6%);
+            color: #fff;
+        }
+
+        .dark .change-theme {
+            background: rgb(36, 45, 57);
+        }
+
+        .dark .change-theme:hover {
+            background: rgb(51, 59, 69);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .container {
+            max-width: 550px;
+            background: white;
+            display: block;
+            margin: 0 auto;
+            border-radius: 15px;
+        }
+
+        .dark .container {
+            background: linear-gradient(109.6deg, rgb(49, 56, 66) 11.2%, rgb(16, 37, 60) 51.2%, rgb(0, 0, 0) 98.6%);
+            color: #e9e5f4;
+        }
+
+        img.img-1 {
+            transition: all 150ms ease-in-out;
+            width: 94%;
+            margin: 15px 0;
+            background-origin: 10px 10px;
+            transition: all 150ms ease-in-out;
+            border-radius: 20px;
+            margin-left: 13px;
+        }
+
+        .img-1:hover {
+            filter: contrast(70%);
+            transform: scale(1.2);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+        }
+
+        .grid img {
+            width: 94%;
+            object-fit: cover;
+            border-radius: 20px;
+            margin-left: 8px;
+        }
+
+        .grid .imgs {
+            height: 80%;
+        }
+
+
+
+        p {
+            text-align: center;
+            font-weight: bold;
+        }
+
+        a {
+            text-decoration: underline;
+            color: rgb(198, 118, 232);
+            font-size: 20px;
+            margin: 20px;
+        }
+
+        a:hover {
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        button.learn {
+            display: block;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 20px;
+            background: #9d77fb;
+            font-size: 24px;
+            font-family: 'Courier New', Courier;
+        }
+
+        button.learn:hover {
+            color: #9d77fb;
+            background: #fff;
+        }
+
+        footer {
+            text-align: center;
+            margin: 20px;
+            font-size: 25px;
+        }
+    </style>
+</head>
+
+<body class="dark">
+    <button class="change-theme">Change Theme</button>
+    <div class="container">
+        <h1>📸Photography</h1>
+        <h2>My Favourite Hobby</h2>
+        <img src="https://images.pexels.com/photos/403495/pexels-photo-403495.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt="" class="img-1">
+        <div class="grid">
+            <img src="https://images.pexels.com/photos/1480807/pexels-photo-1480807.jpeg?auto=compress&cs=tinysrgb&w=600"
+                alt="">
+            <img src="https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?auto=compress&cs=tinysrgb&w=600"
+                alt="" class="imgs">
+            <img src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=600"
+                alt="">
+            <img src="https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?auto=compress&cs=tinysrgb&w=600"
+                alt="" class="imgs">
+        </div>
+        <p>Photography is the art, application, and practice of
+            creating images by recording light, either electronically
+            by means of an image sensor, or chemically by means of a
+            light-sensitive material such as photographic film.</p>
+        <br>
+        <br>
+
+        <a href="https://en.wikipedia.org/wiki/Photography">📖Read on Wikipedia</a>
+        <br>
+        <br>
+        <br>
+        <button class="learn">Learn Photography</button>
+        <br>
+        <footer>Coded 👩🏻‍💻 By Reem Abdella</footer>
+    </div>
+    <script>
+
+        function learnPhotography() {
+
+            let photo = prompt("Do you like photography?")
+            let name = prompt("What's your name?")
+            let email = prompt("enter your email")
+
+            alert(`Thank you ${name}😊 We will Keep in touch `)
+
+        }
+        let button = document.querySelector(".learn")
+        button.addEventListener("click", learnPhotography)
+        function Changethemes() {
+            let body = document.querySelector("body")
+            if (body.classList.contains("dark")) {
+                body.classList.remove("dark")
+            }
+            else {
+                body.classList.add("dark");
+            }
+        }
+        let Changetheme = document.querySelector(".change-theme")
+        Changetheme.addEventListener("click", Changethemes)
+    </script>
+</body>
+
+</html>
